@@ -1,21 +1,31 @@
 let globalPositions;
 
+const fillTable = (position, fields) => {
+  const positionKey = [];
+  for(key in position) {
+    positionKey.push(position[key]);
+  }
+  for(let i = 0; i < fields.children.length; i++) {
+    fields.children[i].append(positionKey[i]);
+  }
+}
+
 const getWorker = (worker) => {
-  console.log(worker);
+  
 }
 
 const getAssistant = (assistant) => {
-  console.log(assistant);
+ 
   getFileData(`./assets/files/${globalPositions[3]}.json`, getWorker);
 }
 
 const getManager = (manager) => {
-  console.log(manager);
+  
   getFileData(`./assets/files/${globalPositions[2]}.json`, getAssistant);
 }
 
 const getInvestor = (investor) => {
-  console.log(investor);
+ 
   getFileData(`./assets/files/${globalPositions[1]}.json`, getManager);
 }
 
