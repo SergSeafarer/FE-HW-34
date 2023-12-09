@@ -11,21 +11,25 @@ const fillTable = (position, fields) => {
 }
 
 const getWorker = (worker) => {
-  
+  const workerFields = document.querySelector('.worker');
+  fillTable(worker, workerFields);
 }
 
 const getAssistant = (assistant) => {
- 
+  const assistantFields = document.querySelector('.assistant');
+  fillTable(assistant, assistantFields);
   getFileData(`./assets/files/${globalPositions[3]}.json`, getWorker);
 }
 
 const getManager = (manager) => {
-  
+  const managerFields = document.querySelector('.manager');
+  fillTable(manager, managerFields);
   getFileData(`./assets/files/${globalPositions[2]}.json`, getAssistant);
 }
 
 const getInvestor = (investor) => {
- 
+  const investorFields = document.querySelector('.investor');
+  fillTable(investor, investorFields);
   getFileData(`./assets/files/${globalPositions[1]}.json`, getManager);
 }
 
